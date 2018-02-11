@@ -19,6 +19,7 @@ if(exists("g:lightline"))
     let s:orange = '#b3785d'
     let s:pink = '#c47ebd'
 
+    let s:c_black = 16
     let s:c_gray1 = 235
     let s:c_gray2 = 236
     let s:c_gray3 = 237
@@ -42,9 +43,12 @@ if(exists("g:lightline"))
 
     let s:p.normal.left = [ [ s:gray2, s:green, s:c_gray1, s:c_green ],
                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
+    " errors/warnings, ctags, columnd, endcoding, filetype
     let s:p.normal.right = [ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
-                           \ [ s:gray1, s:green, s:c_gray1, s:c_green ],
-                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
+                           \ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
+                           \ [ s:gray5, s:gray3, s:c_gray1, s:c_green ],
+                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ],
+                           \ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
     let s:p.normal.middle = [ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
     let s:p.normal.error = [ [ s:gray2, s:red, s:c_gray1, s:c_red ] ]
     let s:p.normal.warning = [ [ s:gray2, s:orange, s:c_gray1, s:c_orange ] ]
@@ -52,26 +56,31 @@ if(exists("g:lightline"))
     let s:p.insert.left = [ [ s:gray2, s:blue, s:c_gray1, s:c_blue ],
                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
     let s:p.insert.right = [ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
+                           \ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
                            \ [ s:gray1, s:blue, s:c_gray1, s:c_blue ],
-                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
+                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ],
+                           \ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
 
     let s:p.replace.left = [ [ s:gray2, s:red, s:c_gray1, s:c_pink ],
                            \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
     let s:p.replace.right = [ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
+                            \ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
                             \ [ s:gray1, s:red, s:c_gray1, s:c_pink ],
-                            \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
+                            \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ],
+                            \ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
 
     let s:p.visual.left = [ [ s:gray2, s:yellow, s:c_gray1, s:c_yellow ],
                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
+    " errors/warnings, ctags, columnd, endcoding, filetype
     let s:p.visual.right = [ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
+                           \ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
                            \ [ s:gray2, s:yellow, s:c_gray1, s:c_yellow ],
-                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
+                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ],
+                           \ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
 
-    let s:p.inactive.left =  [ [ s:gray3, s:gray1, s:c_gray3, s:c_gray1 ],
-                             \ [ s:gray3, s:gray1, s:c_gray3, s:c_gray1 ] ]
-    let s:p.inactive.right = [ [ s:gray3, s:gray1, s:c_gray3, s:c_gray1 ],
-                             \ [ s:gray3, s:gray1, s:c_gray3, s:c_gray1 ] ]
-    let s:p.inactive.middle = [ [ s:gray3, s:gray1, s:c_gray3, s:c_gray1 ] ]
+    let s:p.inactive.left =  []
+    let s:p.inactive.right = []
+    let s:p.inactive.middle = [ [ s:gray3, s:gray1, s:c_gray4, s:c_black ] ]
 
     let s:p.tabline.left = [ [ s:gray5, s:gray3 ] ]
     let s:p.tabline.middle = [ [ s:gray4, s:gray2 ] ]
