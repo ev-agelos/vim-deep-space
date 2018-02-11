@@ -20,6 +20,7 @@ if(exists("g:lightline"))
     let s:pink = '#c47ebd'
 
     let s:c_black = 16
+    let s:c_white = 250
     let s:c_gray1 = 235
     let s:c_gray2 = 236
     let s:c_gray3 = 237
@@ -28,7 +29,7 @@ if(exists("g:lightline"))
     let s:c_gray6 = 248
     let s:c_blue = 67
     let s:c_green = 65
-    let s:c_red = 124
+    let s:c_red = 88
     let s:c_orange = 130
     let s:c_pink = 132
     let s:c_yellow = 143
@@ -51,7 +52,7 @@ if(exists("g:lightline"))
                            \ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
     let s:p.normal.middle = [ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
     let s:p.normal.error = [ [ s:gray2, s:red, s:c_gray1, s:c_red ] ]
-    let s:p.normal.warning = [ [ s:gray2, s:orange, s:c_gray1, s:c_orange ] ]
+    let s:p.normal.warning = [ [ s:gray2, s:orange, s:c_gray1, s:c_white ] ]
 
     let s:p.insert.left = [ [ s:gray2, s:blue, s:c_gray1, s:c_blue ],
                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
