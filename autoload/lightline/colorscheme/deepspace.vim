@@ -27,7 +27,8 @@ if(exists("g:lightline"))
     let s:c_gray4 = 238
     let s:c_gray5 = 243
     let s:c_gray6 = 248
-    let s:c_blue = 67
+    let s:c_light_blue = 67
+    let s:c_blue = 12
     let s:c_green = 65
     let s:c_red = 88
     let s:c_orange = 130
@@ -35,30 +36,34 @@ if(exists("g:lightline"))
     let s:c_yellow = 143
 
     " colors for buftabline plugin(comment them out if buftabline is not being used)
-    hi BufTabLineCurrent ctermbg=65  ctermfg=235 guibg=#709d6c guifg=#1b202a
-    hi BufTabLineFill    ctermbg=236 ctermfg=243 guibg=#232a36 guifg=#51617d
+    hi BufTabLineCurrent ctermbg=65  ctermfg=250 guibg=#709d6c guifg=#1b202a
+    hi BufTabLineFill    ctermbg=0 ctermfg=243 guibg=#232a36 guifg=#51617d
     hi BufTabLineActive  ctermbg=239 ctermfg=248 guibg=#323c4d guifg=#9aa7bd
     hi BufTabLineHidden  ctermbg=239 ctermfg=248 guibg=#323c4d guifg=#9aa7bd
 
     let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
-    let s:p.normal.left = [ [ s:gray2, s:green, s:c_gray1, s:c_green ],
-                          \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
+
+    let s:p.inactive.left =  []
+    let s:p.inactive.right = []
+    let s:p.inactive.middle = [ [ s:gray3, s:gray1, s:c_black, s:c_gray5 ] ]
+
+    let s:p.normal.middle = [ [ s:gray4, s:gray2, s:c_black, s:c_gray5 ] ]
+    let s:p.normal.left = [ [ s:gray2, s:green, s:c_white, s:c_green ],
+                          \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray2 ] ]
     " errors/warnings, ctags, columnd, endcoding, filetype
     let s:p.normal.right = [ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
                            \ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
-                           \ [ s:gray5, s:gray3, s:c_gray1, s:c_green ],
-                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ],
-                           \ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
-    let s:p.normal.middle = [ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
+                           \ [ s:gray5, s:gray3, s:c_white, s:c_green ],
+                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ]]
     let s:p.normal.error = [ [ s:gray2, s:red, s:c_gray1, s:c_red ] ]
     let s:p.normal.warning = [ [ s:gray2, s:orange, s:c_gray1, s:c_white ] ]
 
-    let s:p.insert.left = [ [ s:gray2, s:blue, s:c_gray1, s:c_blue ],
+    let s:p.insert.left = [ [ s:gray2, s:blue, s:c_gray1, s:c_light_blue ],
                           \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ] ]
     let s:p.insert.right = [ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
                            \ [ s:gray4, s:gray6, s:c_gray6, s:c_gray4 ],
-                           \ [ s:gray1, s:blue, s:c_gray1, s:c_blue ],
+                           \ [ s:gray1, s:blue, s:c_gray1, s:c_light_blue ],
                            \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ],
                            \ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
 
@@ -78,10 +83,6 @@ if(exists("g:lightline"))
                            \ [ s:gray2, s:yellow, s:c_gray1, s:c_yellow ],
                            \ [ s:gray5, s:gray3, s:c_gray6, s:c_gray4 ],
                            \ [ s:gray4, s:gray2, s:c_gray5, s:c_gray2 ] ]
-
-    let s:p.inactive.left =  []
-    let s:p.inactive.right = []
-    let s:p.inactive.middle = [ [ s:gray3, s:gray1, s:c_gray4, s:c_black ] ]
 
     let s:p.tabline.left = [ [ s:gray5, s:gray3 ] ]
     let s:p.tabline.middle = [ [ s:gray4, s:gray2 ] ]
